@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Brain AI Framework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .service-option {
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .service-option input[type="radio"] {
+            display: none;
+        }
+
+        .service-option.selected {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .service-option h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .service-option p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .contact-method h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .contact-method p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-card">
+            <div class="header">
+                <h1>🧠 Brain AI Framework</h1>
+                <p>Professional Services & Consulting</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="success-message" id="successMessage">
+                    Thank you for your inquiry! We'll get back to you within 24 hours.
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    Please fill in all required fields and try again.
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Service Type *</label>
+                        <div class="service-options">
+                            <div class="service-option" data-service="implementation">
+                                <input type="radio" name="service" value="implementation" id="implementation">
+                                <h3>Custom Implementation</h3>
+                                <p>$5,000-25,000</p>
+                            </div>
+                            <div class="service-option" data-service="consultation">
+                                <input type="radio" name="service" value="consultation" id="consultation">
+                                <h3>Strategy Consultation</h3>
+                                <p>$150-300/hour</p>
+                            </div>
+                            <div class="service-option" data-service="training">
+                                <input type="radio" name="service" value="training" id="training">
+                                <h3>Team Training</h3>
+                                <p>$2,000-5,000/day</p>
+                            </div>
+                            <div class="service-option" data-service="review">
+                                <input type="radio" name="service" value="review" id="review">
+                                <h3>Code Review</h3>
+                                <p>$500-2,000/project</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company/Organization *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="financial">Financial Services</option>
+                                <option value="ecommerce">E-commerce/Retail</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="technology">Technology/Software</option>
+                                <option value="education">Education</option>
+                                <option value="government">Government</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range *</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select Budget</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="100k+">$100,000+</option>
+                                <option value="not-sure">Not sure - Need quote</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project">Project Description *</label>
+                        <textarea id="project" name="project" placeholder="Please describe your project and what you hope to achieve with Brain AI..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select Timeline</option>
+                            <option value="immediate">Immediate (within 1 month)</option>
+                            <option value="short-term">Short-term (1-3 months)</option>
+                            <option value="medium-term">Medium-term (3-6 months)</option>
+                            <option value="long-term">Long-term (6+ months)</option>
+                            <option value="flexible">Flexible/Not sure</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        🚀 Get Free Consultation
+                    </button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>📞 Other Ways to Reach Us</h3>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div>📧</div>
+                            <h4>Email</h4>
+                            <p>jitenkr2030@gmail.com</p>
+                        </div>
+                        <div class="contact-method">
+                            <div>📱</div>
+                            <h4>Phone</h4>
+                            <p>+91 XXXXXXXXXX</p>
+                        </div>
+                        <div class="contact-method">
+                            <div>📅</div>
+                            <h4>Schedule Call</h4>
+                            <p>Calendly Link</p>
+                        </div>
+                        <div class="contact-method">
+                            <div>💬</div>
+                            <h4>GitHub</h4>
+                            <p>Create Issue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service option selection
+        document.querySelectorAll('.service-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.service-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Check the radio button
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Validate required fields
+            const requiredFields = ['service', 'name', 'email', 'company', 'industry', 'budget', 'project'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!data[field] || data[field].trim() === '') {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                return;
+            }
+            
+            // Create GitHub issue
+            const issueTitle = `[CONSULTING] ${data.name} from ${data.company}`;
+            const issueBody = `
+## Consulting Inquiry
+
+### Service Requested
+${data.service}
+
+### Contact Information
+- **Name**: ${data.name}
+- **Email**: ${data.email}
+- **Company**: ${data.company}
+- **Phone**: ${data.phone || 'Not provided'}
+
+### Company Details
+- **Industry**: ${data.industry}
+- **Budget Range**: ${data.budget}
+- **Timeline**: ${data.timeline || 'Not specified'}
+
+### Project Description
+${data.project}
+
+---
+*Submitted via contact form on ${new Date().toLocaleDateString()}*
+            `;
+            
+            // Create GitHub issue (this would require GitHub API integration)
+            // For now, we'll show success message
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Reset form
+            this.reset();
+            document.querySelectorAll('.service-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Log the data (in production, this would be sent to a server)
+            console.log('Form submitted:', data);
+        });
+    </script>
+</body>
+</html>
