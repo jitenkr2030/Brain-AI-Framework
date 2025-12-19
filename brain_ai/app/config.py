@@ -5,10 +5,18 @@ Centralized settings and environment management.
 
 import os
 from typing import List, Optional
-from pydantic import BaseSettings, Field
+from pydantic_settings import BaseSettings
+from pydantic import Field
 
 
 class Settings(BaseSettings):
+    """Application settings"""
+    
+    model_config = {
+        "env_file": ".env",
+        "case_sensitive": True,
+        "extra": "ignore"
+    }
     """Application settings"""
     
     # Server Configuration
@@ -89,10 +97,6 @@ class Settings(BaseSettings):
     )
     API_KEY_REQUIRED: bool = Field(default=False, description="Require API key for access")
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
-
 
 # Global settings instance
 _settings: Optional[Settings] = None

@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 import math
 import random
 from enum import Enum
+from loguru import logger
 
 from core.memory import MemoryItem
 
