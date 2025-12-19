@@ -1,0 +1,47 @@
+# Shopping Assistant Requirements
+# Core dependencies for the shopping assistant system
+
+# FastAPI and ASGI
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Data validation and serialization
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# HTTP client and requests
+httpx>=0.25.0
+
+# Logging and monitoring
+loguru>=0.7.0
+
+# Data processing and analysis
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+
+# Recommendation engine
+scikit-learn>=1.3.0
+
+# Natural language processing
+nltk>=3.8.0
+textblob>=0.17.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+
+# Text processing
+regex>=2023.0.0
+
+# Database connectivity (optional)
+sqlalchemy>=2.0.0
+
+# Caching (optional)
+redis>=4.6.0
+
+# Development and testing (optional)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Production server (optional)
+gunicorn>=21.0.0
