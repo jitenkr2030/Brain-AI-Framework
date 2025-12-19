@@ -1,0 +1,7 @@
+# Medical Diagnosis Assistant - Dependencies
+-r ../requirements-common.txt
+
+# Additional medical-specific dependencies
+medical-ai==1.0.0  # Placeholder for medical AI libraries
+plotly==5.17.0
+dash==2.14.1
