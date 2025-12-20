@@ -65,6 +65,7 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["code"]
 
+# Using default PyPI mirror for better compatibility
 [[tool.uv.index]]
-url = "http://mirrors.cloud.aliyuncs.com/pypi/simple"
+url = "https://pypi.org/simple"
 default = true
