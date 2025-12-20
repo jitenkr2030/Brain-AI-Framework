@@ -1,0 +1,133 @@
+name: Bug Report
+description: Report a bug to help us improve Brain AI Framework
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible to help us understand and reproduce the issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the bug in detail...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Run command '...'
+        2. Call function '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: A clear and concise description of what actually happened
+      placeholder: What actually happened?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical - Blocks development/production
+        - High - Major functionality broken
+        - Medium - Partial functionality broken
+        - Low - Minor issue or inconvenience
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Programming Language
+      description: Which language SDK are you using?
+      options:
+        - Python
+        - JavaScript
+        - TypeScript
+        - Java
+        - Go
+        - Rust
+        - Ruby
+        - PHP
+        - C#
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Information
+      description: Please provide your environment details
+      placeholder: |
+        OS: [e.g. Ubuntu 20.04, macOS 12.0, Windows 11]
+        Python/Node.js/Java version: [e.g. Python 3.9, Node.js 16, Java 11]
+        Brain AI Framework version: [e.g. 1.0.0]
+        Other relevant dependencies: [e.g. FastAPI 0.68.0, TensorFlow 2.8.0]
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Snippet
+      description: If applicable, provide a code snippet that reproduces the issue
+      render: python
+      placeholder: |
+        # Your code here
+        from brain_ai import BrainAISDK
+        # ...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: If applicable, provide any error logs or stack traces
+      render: shell
+      placeholder: |
+        Traceback (most recent call last):
+          File "example.py", line 1, in <module>
+            # error here
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any additional information that might be helpful...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have read the [documentation](docs/getting-started.md)
+          required: true
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have provided enough information for the team to reproduce the issue
+          required: true
