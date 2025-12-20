@@ -8,28 +8,77 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .hero { text-align: center; padding: 100px 0; }
+        
+        /* Navigation */
+        .nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); z-index: 1000; padding: 15px 0; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .nav-logo { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-link { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        .nav-link:hover { opacity: 0.8; }
+        .nav-cta { background: white; color: #667eea; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 150px 0 100px; }
         .hero h1 { font-size: 4rem; margin-bottom: 20px; }
         .hero p { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.9; }
-        .btn { background: white; color: #667eea; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; margin: 10px; transition: transform 0.3s; }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn { background: white; color: #667eea; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s; }
         .btn:hover { transform: translateY(-3px); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+        .btn-secondary:hover { background: white; color: #667eea; }
+        
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 60px 0; }
         .stat { text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; }
         .stat-number { font-size: 2.5rem; font-weight: 700; }
+        
         .features { background: white; color: #333; padding: 100px 0; }
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
         .feature { text-align: center; padding: 40px; background: #f8f9fa; border-radius: 20px; }
         .feature h3 { font-size: 1.5rem; margin-bottom: 15px; color: #667eea; }
+        
+        /* Quick Links Section */
+        .quick-links { padding: 80px 0; background: rgba(255,255,255,0.1); }
+        .quick-links h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .link-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s; }
+        .link-card:hover { transform: translateY(-5px); }
+        .link-card h3 { margin-bottom: 15px; }
+        .link-card a { color: white; text-decoration: none; font-weight: 600; }
+        
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 120px 0 80px; }
+            .hero h1 { font-size: 2.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">🧠 Brain AI</a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="examples/" class="nav-link">Examples</a>
+                <a href="docs/" class="nav-link">Docs</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
             <h1>🧠 Brain AI Framework</h1>
             <p>Revolutionary brain-inspired AI with persistent memory and continuous learning</p>
-            <div>
+            <div class="cta-buttons">
                 <a href="pricing.html" class="btn">🚀 Get Started</a>
-                <a href="examples/" class="btn">📚 View Examples</a>
+                <a href="contact.html" class="btn btn-secondary">📞 Contact Us</a>
+                <a href="examples/" class="btn btn-secondary">📚 View Examples</a>
             </div>
             <div class="stats">
                 <div class="stat">
@@ -71,6 +120,55 @@
                 <div class="feature">
                     <h3>⚡ Sparse Activation</h3>
                     <p>Efficient processing like the human brain. Only activates relevant neural pathways.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Links Section -->
+    <div class="quick-links">
+        <div class="container">
+            <h2>Explore Brain AI Framework</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <h3>💰 Pricing Plans</h3>
+                    <p>Choose the perfect plan for your needs</p>
+                    <a href="pricing.html">View Pricing →</a>
+                </div>
+                <div class="link-card">
+                    <h3>📞 Contact Sales</h3>
+                    <p>Get in touch with our team</p>
+                    <a href="contact.html">Contact Us →</a>
+                </div>
+                <div class="link-card">
+                    <h3>📚 Documentation</h3>
+                    <p>Complete guides and API reference</p>
+                    <a href="docs/">Read Docs →</a>
+                </div>
+                <div class="link-card">
+                    <h3>🛠️ Examples</h3>
+                    <p>Real-world use cases and demos</p>
+                    <a href="examples/">View Examples →</a>
+                </div>
+                <div class="link-card">
+                    <h3>🎓 Course</h3>
+                    <p>Learn Brain AI development</p>
+                    <a href="brain_ai_course/">Start Learning →</a>
+                </div>
+                <div class="link-card">
+                    <h3>☁️ SaaS Platform</h3>
+                    <p>Cloud-based AI services</p>
+                    <a href="brain_ai_saas/">Try SaaS →</a>
+                </div>
+                <div class="link-card">
+                    <h3>📖 README</h3>
+                    <p>Project overview and quick start</p>
+                    <a href="README.md">Read More →</a>
+                </div>
+                <div class="link-card">
+                    <h3>🚀 Demo</h3>
+                    <p>Interactive demonstration</p>
+                    <a href="demo.py">Run Demo →</a>
                 </div>
             </div>
         </div>
