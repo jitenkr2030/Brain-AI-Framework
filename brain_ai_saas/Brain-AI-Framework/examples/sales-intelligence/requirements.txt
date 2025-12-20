@@ -1,0 +1,30 @@
+# Sales Intelligence Assistant Requirements
+# Core dependencies for the sales intelligence system
+
+# FastAPI and ASGI
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Data validation and serialization
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# HTTP client and requests
+httpx>=0.25.0
+
+# Logging and monitoring
+loguru>=0.7.0
+
+# Data processing and analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+
+# Development and testing (optional)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Production server (optional)
+gunicorn>=21.0.0

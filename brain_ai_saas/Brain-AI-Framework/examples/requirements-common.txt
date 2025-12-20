@@ -1,0 +1,31 @@
+# Common dependencies for all Brain AI examples
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.12.5
+pydantic-settings==2.12.0
+loguru==0.7.2
+python-dotenv==1.2.1
+websockets==12.0
+jinja2==3.1.6
+aiofiles==23.2.1
+python-multipart==0.0.6
+python-dateutil==2.9.0.post0
+pytz==2024.2
+
+# UI Components
+streamlit==1.28.0
+plotly==5.17.0
+dash==2.14.1
+bootstrap==5.3.0
+chart.js==3.9.1
+
+# Data handling
+pandas==2.1.4
+numpy==1.26.0
+faker==20.1.0
+uuid==1.30
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
