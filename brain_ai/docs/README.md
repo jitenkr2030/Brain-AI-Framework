@@ -4,14 +4,31 @@ Welcome to the comprehensive documentation for the Brain AI Framework - a revolu
 
 ## 📚 Documentation Structure
 
-### Quick Links
+### 🚀 Core Documentation
 - [Getting Started](getting-started.md) - Begin your journey with Brain AI
 - [Installation Guide](installation.md) - Install SDKs for your programming language
 - [API Reference](api-reference.md) - Complete API documentation
 - [Examples & Use Cases](examples.md) - Real-world applications and code examples
 - [Configuration](configuration.md) - Advanced configuration options
 - [Troubleshooting](troubleshooting.md) - Solve common issues
+
+### 🛠️ Development & Deployment
 - [Contributing](contributing.md) - Join our development community
+- [Deployment Guide](deployment-guide.md) - Production deployment instructions
+- [Development Guide](development/) - Detailed development documentation
+
+### 📖 User Resources
+- [User Guide](user-guide/) - End-user documentation and tutorials
+- [Case Studies](case-studies.md) - Real-world implementation examples
+- [Overview](overview/) - High-level framework concepts and architecture
+
+### 💼 Business & Strategy
+- [Strategy](strategy/) - Business strategy and monetization plans
+- [Courses](courses/) - Course creation and educational content
+
+### 🐙 GitHub & Repository
+- [GitHub Guide](github/) - Repository management and GitHub-specific resources
+- [Templates](templates/) - Reusable templates and examples
 
 ## 🚀 What is Brain AI?
 
