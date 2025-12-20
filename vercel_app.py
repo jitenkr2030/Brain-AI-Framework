@@ -5,12 +5,12 @@ Serves the Brain AI Framework landing page with basic API endpoints
 """
 
 import os
+import json
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel
-import uvicorn
 
 app = FastAPI(
     title="Brain-Inspired AI Framework",
@@ -29,9 +29,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve static files (the landing page)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 class HealthResponse(BaseModel):
     status: str
     message: str
@@ -42,10 +39,48 @@ class InfoResponse(BaseModel):
     description: str
     features: list
 
-@app.get("/", response_class=FileResponse)
+@app.get("/", response_class=HTMLResponse)
 async def serve_landing_page():
     """Serve the main landing page"""
-    return FileResponse("index.html")
+    try:
+        # Read the index.html file
+        index_path = Path("index.html")
+        if index_path.exists():
+            with open(index_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            return HTMLResponse(content=content)
+        else:
+            # Fallback HTML if index.html doesn't exist
+            return HTMLResponse(content="""
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>🧠 Brain AI Framework</title>
+                <style>
+                    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                    .container { max-width: 800px; margin: 0 auto; }
+                    h1 { color: #333; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>🧠 Brain AI Framework</h1>
+                    <p>Revolutionary Brain-Inspired AI System</p>
+                    <p>Status: <strong>Running Successfully</strong></p>
+                </div>
+            </body>
+            </html>
+            """)
+    except Exception as e:
+        return HTMLResponse(content=f"""
+        <html><body>
+        <h1>Brain AI Framework</h1>
+        <p>Framework is running but landing page file not found.</p>
+        <p>Error: {str(e)}</p>
+        </body></html>
+        """)
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
@@ -64,7 +99,7 @@ async def get_info():
         description="🧠 Revolutionary AI system with continuous learning and persistent memory",
         features=[
             "Continuous Learning",
-            "Persistent Memory",
+            "Persistent Memory", 
             "Real-time Reasoning",
             "Adaptive Intelligence",
             "Scalable Architecture"
@@ -86,9 +121,25 @@ async def demo_endpoint():
         ]
     }
 
+@app.get("/api/status")
+async def status_endpoint():
+    """Status endpoint for monitoring"""
+    return {
+        "status": "online",
+        "version": "1.0.0",
+        "uptime": "active",
+        "endpoints": {
+            "health": "/health",
+            "info": "/api/info", 
+            "demo": "/api/demo",
+            "docs": "/docs"
+        }
+    }
+
 # Vercel handler function
 def main():
     """Main handler for Vercel"""
+    import uvicorn
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(
         app, 
