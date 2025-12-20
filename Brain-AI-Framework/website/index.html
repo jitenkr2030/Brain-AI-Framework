@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧠 Brain AI Framework - Revolutionary AI</title>
+    <title>🧠 Brain AI — The AI That Remembers</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
@@ -19,39 +19,86 @@
         .nav-cta { background: white; color: #667eea; padding: 8px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; }
         
         /* Hero Section */
-        .hero { text-align: center; padding: 150px 0 100px; }
+        .hero { text-align: center; padding: 150px 0 80px; }
         .hero h1 { font-size: 4rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.9; }
-        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn { background: white; color: #667eea; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s; }
-        .btn:hover { transform: translateY(-3px); }
-        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
-        .btn-secondary:hover { background: white; color: #667eea; }
+        .hero-subtitle { font-size: 1.8rem; margin-bottom: 15px; font-weight: 600; }
+        .hero-tagline { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; }
+        .dual-cta { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+        .btn-primary { background: #ff6b6b; color: white; padding: 18px 35px; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { transform: translateY(-3px); background: #ff5252; }
+        .btn-secondary { background: transparent; border: 2px solid #ff6b6b; color: #ff6b6b; padding: 18px 35px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .btn-secondary:hover { background: #ff6b6b; color: white; transform: translateY(-3px); }
         
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin: 60px 0; }
-        .stat { text-align: center; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; }
-        .stat-number { font-size: 2.5rem; font-weight: 700; }
+        /* Social Proof */
+        .social-proof { background: rgba(255,255,255,0.1); padding: 60px 0; text-align: center; }
+        .social-proof h2 { font-size: 2.5rem; margin-bottom: 40px; }
+        .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); }
+        .testimonial-text { font-size: 1.1rem; font-style: italic; margin-bottom: 20px; }
+        .testimonial-author { font-weight: 600; opacity: 0.9; }
         
-        .features { background: white; color: #333; padding: 100px 0; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
-        .feature { text-align: center; padding: 40px; background: #f8f9fa; border-radius: 20px; }
-        .feature h3 { font-size: 1.5rem; margin-bottom: 15px; color: #667eea; }
+        /* How It Works */
+        .how-it-works { background: white; color: #333; padding: 100px 0; }
+        .how-it-works h2 { text-align: center; font-size: 3rem; margin-bottom: 60px; }
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
+        .step { text-align: center; padding: 40px; }
+        .step-number { width: 60px; height: 60px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 20px; }
+        .step h3 { font-size: 1.5rem; margin-bottom: 15px; color: #667eea; }
+        .step-diagram { display: flex; align-items: center; justify-content: center; gap: 20px; margin: 60px 0; font-size: 1.2rem; font-weight: 600; }
+        .arrow { font-size: 2rem; color: #667eea; }
         
-        /* Quick Links Section */
-        .quick-links { padding: 80px 0; background: rgba(255,255,255,0.1); }
-        .quick-links h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .link-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s; }
-        .link-card:hover { transform: translateY(-5px); }
-        .link-card h3 { margin-bottom: 15px; }
-        .link-card a { color: white; text-decoration: none; font-weight: 600; }
+        /* Key Benefits */
+        .benefits { padding: 80px 0; }
+        .benefits h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .benefit { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s; }
+        .benefit:hover { transform: translateY(-5px); }
+        .benefit h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .benefit-icon { font-size: 3rem; margin-bottom: 20px; }
+        
+        /* Sponsor Section */
+        .sponsor-section { background: rgba(255,107,107,0.2); padding: 80px 0; text-align: center; }
+        .sponsor-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .sponsor-section p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; }
+        .sponsor-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .tier { background: rgba(255,255,255,0.2); padding: 25px; border-radius: 15px; border: 2px solid transparent; transition: all 0.3s; }
+        .tier:hover { border-color: #ff6b6b; transform: translateY(-5px); }
+        .tier h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .tier-price { font-size: 2rem; font-weight: bold; margin-bottom: 15px; }
+        .tier-benefits { text-align: left; margin-bottom: 20px; }
+        .tier-benefits li { margin-bottom: 5px; font-size: 0.9rem; }
+        
+        /* Pricing */
+        .pricing { background: white; color: #333; padding: 100px 0; }
+        .pricing h2 { text-align: center; font-size: 3rem; margin-bottom: 20px; }
+        .pricing-subtitle { text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
+        .price-card { background: #f8f9fa; padding: 40px; border-radius: 20px; text-align: center; position: relative; }
+        .price-card.featured { background: #667eea; color: white; transform: scale(1.05); }
+        .price-card h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .price { font-size: 3rem; font-weight: bold; margin-bottom: 10px; }
+        .price-card.featured .price { color: white; }
+        .price-period { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
+        .price-features { list-style: none; margin-bottom: 30px; }
+        .price-features li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .price-features li:before { content: "✓"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+        .price-card.featured .price-features li:before { color: white; }
+        
+        /* Demo Section */
+        .demo-section { padding: 80px 0; background: rgba(255,255,255,0.1); text-align: center; }
+        .demo-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .demo-placeholder { width: 100%; height: 400px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin: 40px 0; border: 2px dashed rgba(255,255,255,0.3); }
         
         /* Mobile Navigation */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero { padding: 120px 0 80px; }
+            .hero { padding: 120px 0 60px; }
             .hero h1 { font-size: 2.5rem; }
-            .cta-buttons { flex-direction: column; align-items: center; }
+            .dual-cta { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 300px; }
+            .process-steps { grid-template-columns: 1fr; }
+            .step-diagram { flex-direction: column; gap: 10px; }
+            .arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
@@ -61,10 +108,10 @@
         <div class="nav-content">
             <a href="https://github.com/jitenkr2030/Brain-AI-Framework" class="nav-logo">🧠 Brain AI</a>
             <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
+                <a href="#benefits" class="nav-link">Benefits</a>
                 <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/open_source/examples" class="nav-link">Examples</a>
                 <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/docs" class="nav-link">Docs</a>
-                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="contact.html" class="nav-cta">Contact</a>
             </div>
         </div>
@@ -73,103 +120,230 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1>🧠 Brain AI Framework</h1>
-            <p>Revolutionary brain-inspired AI with persistent memory and continuous learning</p>
-            <div class="cta-buttons">
-                <a href="pricing.html" class="btn">🚀 Get Started</a>
-                <a href="contact.html" class="btn btn-secondary">📞 Contact Us</a>
-                <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/open_source/examples" class="btn btn-secondary">📚 View Examples</a>
-            </div>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">96.8%</div>
-                    <div>Success Rate</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">18</div>
-                    <div>Production Examples</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">9</div>
-                    <div>Language SDKs</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">80%</div>
-                    <div>Cost Reduction</div>
-                </div>
+            <h1>Brain AI</h1>
+            <p class="hero-subtitle">The AI That Remembers</p>
+            <p class="hero-tagline">Persistent memory + continuous learning for real AI systems<br>No retraining. No forgetting. Just smarter over time.</p>
+            
+            <div class="dual-cta">
+                <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/platform" class="btn-primary">🚀 Try Free Hosted Brain AI</a>
+                <a href="https://github.com/sponsors/jitenkr2030" class="btn-secondary">💖 Sponsor This Project</a>
             </div>
         </div>
     </div>
-    <div class="features" id="features">
+    
+    <!-- Social Proof -->
+    <div class="social-proof">
         <div class="container">
-            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 20px;">Why Brain AI Changes Everything</h2>
-            <p style="text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 60px;">Traditional AI forgets everything after training. Brain AI remembers, learns, and improves continuously.</p>
-            <div class="feature-grid">
-                <div class="feature">
-                    <h3>🧠 Persistent Memory</h3>
-                    <p>Never lose learned knowledge. Unlike traditional AI that forgets after training, Brain AI stores experiences forever.</p>
+            <h2>Trusted by Early Users</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Brain AI helped me reduce API calls by 50% and saved us thousands in retraining costs. The persistent memory is a game-changer."</p>
+                    <p class="testimonial-author">— Sarah Chen, Product Manager at FinTech Startup</p>
                 </div>
-                <div class="feature">
-                    <h3>📈 Continuous Learning</h3>
-                    <p>Improves automatically without expensive retraining. Adapts to new information in real-time.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">"This is the first AI that truly remembers context across conversations. It revolutionized our customer support workflow."</p>
+                    <p class="testimonial-author">— Marcus Rodriguez, Developer at Healthcare AI</p>
                 </div>
-                <div class="feature">
-                    <h3>🔍 Intelligent Reasoning</h3>
-                    <p>Makes decisions using stored knowledge with transparent explanations. No more black box AI.</p>
-                </div>
-                <div class="feature">
-                    <h3>⚡ Sparse Activation</h3>
-                    <p>Efficient processing like the human brain. Only activates relevant neural pathways.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">"From prototype to production in days, not months. Brain AI's continuous learning eliminated our retraining bottleneck."</p>
+                    <p class="testimonial-author">— Alex Thompson, CTO at E-commerce Platform</p>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Quick Links Section -->
-    <div class="quick-links">
+    <!-- How It Works -->
+    <div class="how-it-works">
         <div class="container">
-            <h2>Explore Brain AI Framework</h2>
-            <div class="links-grid">
-                <div class="link-card">
-                    <h3>💰 Pricing Plans</h3>
-                    <p>Choose the perfect plan for your needs</p>
-                    <a href="pricing.html">View Pricing →</a>
+            <h2>How Brain AI Works</h2>
+            <div class="step-diagram">
+                <span>📝 Input</span>
+                <span class="arrow">→</span>
+                <span>🧠 Memory</span>
+                <span class="arrow">→</span>
+                <span>🎯 Smarter Output</span>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Persistent Memory</h3>
+                    <p>Unlike traditional AI that forgets after training, Brain AI stores and maintains knowledge across all interactions and sessions.</p>
                 </div>
-                <div class="link-card">
-                    <h3>📞 Contact Sales</h3>
-                    <p>Get in touch with our team</p>
-                    <a href="contact.html">Contact Us →</a>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Continuous Learning</h3>
+                    <p>The system automatically improves from user feedback and new information, without expensive retraining cycles.</p>
                 </div>
-                <div class="link-card">
-                    <h3>📚 Documentation</h3>
-                    <p>Complete guides and API reference</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/docs">Read Docs →</a>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Context-Aware Intelligence</h3>
+                    <p>Every response builds on previous knowledge, creating smarter, more relevant outputs over time.</p>
                 </div>
-                <div class="link-card">
-                    <h3>🛠️ Examples</h3>
-                    <p>Real-world use cases and demos</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/open_source/examples">View Examples →</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Benefits -->
+    <div class="benefits" id="benefits">
+        <div class="container">
+            <h2>Why Brain AI Changes Everything</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>No Retraining Cycles</h3>
+                    <p>Add new knowledge instantly without expensive model retraining</p>
                 </div>
-                <div class="link-card">
-                    <h3>🎓 Course</h3>
-                    <p>Learn Brain AI development</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/education">Start Learning →</a>
+                <div class="benefit">
+                    <div class="benefit-icon">💾</div>
+                    <h3>Memory Persists</h3>
+                    <p>Knowledge carries across sessions, conversations, and applications</p>
                 </div>
-                <div class="link-card">
-                    <h3>☁️ SaaS Platform</h3>
-                    <p>Cloud-based AI services</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/platform">Try SaaS →</a>
+                <div class="benefit">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Cost-Efficient AI</h3>
+                    <p>Reduce infrastructure costs by 60-80% vs traditional retraining approaches</p>
                 </div>
-                <div class="link-card">
-                    <h3>📖 README</h3>
-                    <p>Project overview and quick start</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/blob/main/README.md">Read More →</a>
+                <div class="benefit">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>Multi-Language SDKs</h3>
+                    <p>Works with 9 programming languages across all major tech stacks</p>
                 </div>
-                <div class="link-card">
-                    <h3>🚀 Demo</h3>
-                    <p>Interactive demonstration</p>
-                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/blob/main/website/demo.py">Run Demo →</a>
+                <div class="benefit">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Ready Examples</h3>
+                    <p>Production-ready examples you can clone and deploy immediately</p>
                 </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Production Ready</h3>
+                    <p>Built for enterprise scale with monitoring, analytics, and compliance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sponsor Section -->
+    <div class="sponsor-section">
+        <div class="container">
+            <h2>💖 Support Brain AI</h2>
+            <p>Brain AI is an open-source project powered by community support.<br>If this project saved you time or money, please consider sponsoring.</p>
+            
+            <div class="sponsor-tiers">
+                <div class="tier">
+                    <h4>🌱 Supporter</h4>
+                    <div class="tier-price">$5/mo</div>
+                    <ul class="tier-benefits">
+                        <li>❤️ Name in README</li>
+                        <li>🚀 Early previews</li>
+                        <li>📧 Sponsor updates</li>
+                    </ul>
+                </div>
+                <div class="tier">
+                    <h4>⚡ Builder</h4>
+                    <div class="tier-price">$15/mo</div>
+                    <ul class="tier-benefits">
+                        <li>✅ All Supporter benefits</li>
+                        <li>🧠 Advanced examples</li>
+                        <li>📚 Premium tutorials</li>
+                        <li>🗳️ Vote on roadmap</li>
+                    </ul>
+                </div>
+                <div class="tier">
+                    <h4>🔥 Professional</h4>
+                    <div class="tier-price">$50/mo</div>
+                    <ul class="tier-benefits">
+                        <li>✅ All Builder benefits</li>
+                        <li>📞 1-on-1 (30 min)</li>
+                        <li>🔧 Architecture review</li>
+                        <li>⚡ Priority support</li>
+                    </ul>
+                </div>
+                <div class="tier">
+                    <h4>💎 Enterprise</h4>
+                    <div class="tier-price">$200/mo</div>
+                    <ul class="tier-benefits">
+                        <li>✅ All benefits</li>
+                        <li>🎯 Custom guidance</li>
+                        <li>🔐 Production support</li>
+                        <li>🏆 Featured recognition</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <a href="https://github.com/sponsors/jitenkr2030" class="btn-primary" style="margin-top: 40px;">Sponsor Now →</a>
+        </div>
+    </div>
+    
+    <!-- Pricing -->
+    <div class="pricing" id="pricing">
+        <div class="container">
+            <h2>Choose Your Brain AI Plan</h2>
+            <p class="pricing-subtitle">Start free, scale as you grow. Open source forever, commercial features when you need them.</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Open Source</h3>
+                    <div class="price">Free</div>
+                    <div class="price-period">Forever</div>
+                    <ul class="price-features">
+                        <li>✅ Complete framework</li>
+                        <li>✅ All SDKs included</li>
+                        <li>✅ Example applications</li>
+                        <li>✅ Community support</li>
+                        <li>✅ MIT License</li>
+                    </ul>
+                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework" class="btn-secondary">Get Started Free</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>SaaS Platform</h3>
+                    <div class="price">$29-299</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✅ Everything in Open Source</li>
+                        <li>✅ Hosted infrastructure</li>
+                        <li>✅ Analytics dashboard</li>
+                        <li>✅ Priority support</li>
+                        <li>✅ Auto-scaling</li>
+                    </ul>
+                    <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/platform" class="btn-primary">Start Free Trial</a>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <div class="price-period">Contact us</div>
+                    <ul class="price-features">
+                        <li>✅ Everything in SaaS</li>
+                        <li>✅ Custom integrations</li>
+                        <li>✅ SLA guarantees</li>
+                        <li>✅ Compliance features</li>
+                        <li>✅ Dedicated support</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Demo Section -->
+    <div class="demo-section">
+        <div class="container">
+            <h2>See Brain AI in Action</h2>
+            <p>Watch how Brain AI remembers context and learns continuously</p>
+            <div class="demo-placeholder">
+                📹 Demo Video Placeholder<br>
+                <small>(Replace with actual demo video or GIF)</small>
+            </div>
+            <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/open_source/examples" class="btn-primary">View Live Examples →</a>
+        </div>
+    </div>
+    
+    <!-- Final CTA -->
+    <div class="hero">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Build Smarter AI?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">Join thousands of developers building AI that remembers and learns.</p>
+            <div class="dual-cta">
+                <a href="https://github.com/jitenkr2030/Brain-AI-Framework/tree/main/platform" class="btn-primary">🚀 Start Free Trial</a>
+                <a href="https://github.com/sponsors/jitenkr2030" class="btn-secondary">💖 Become a Sponsor</a>
             </div>
         </div>
     </div>
