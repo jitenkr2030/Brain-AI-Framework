@@ -4,7 +4,74 @@ Welcome to the comprehensive documentation for the Brain AI Framework - a revolu
 
 ## 📚 Documentation Structure
 
-### 🚀 Core Documentation
+### 🏢 **Business Documentation** (`/business/`)
+Strategic and business-related documents for the Brain AI Framework.
+
+#### **Business Plans** (`/business/business-plans/`)
+- [Comprehensive SaaS Plan](business-plans/brain_ai_saas_comprehensive_plan.md) - Complete SaaS business strategy
+- [30-Day Implementation Roadmap](business-plans/brain_ai_saas_30day_roadmap.md) - Practical implementation guide
+
+#### **Monetization Strategy** (`/business/monetization/`)
+- [Monetization Strategy](monetization/MONETIZATION_STRATEGY.md) - Revenue models and business strategy
+
+#### **Strategy** (`/business/strategy/`)
+- [Solo Developer Strategy](strategy/SOLO_DEVELOPER_STRATEGY.md) - Building a multi-billion dollar AI platform
+- [Zero-Cost Revenue Plan](strategy/zero_cost_revenue_plan.md) - Revenue generation without upfront costs
+
+### 🔧 **Technical Documentation** (`/technical/`)
+Technical guides, API references, and implementation details.
+
+#### **Implementation** (`/technical/implementation/`)
+- [SaaS Implementation Strategy](implementation/SaaS_Implementation_Strategy.md) - Complete SaaS platform strategy
+- [Implementation Guide](implementation/Implementation_Guide.md) - Technical implementation roadmap
+
+#### **API Reference** (`/technical/api-reference/`)
+- [API Reference](api-reference/api-reference.md) - Complete API documentation
+
+#### **Guides** (`/technical/guides/`)
+- [Getting Started](guides/getting-started.md) - Begin your journey with Brain AI
+- [Installation Guide](guides/installation.md) - Install SDKs for your programming language
+- [Examples & Use Cases](guides/examples.md) - Real-world applications and code examples
+- [Configuration](guides/configuration.md) - Advanced configuration options
+- [Deployment Guide](guides/deployment-guide.md) - Production deployment instructions
+- [Enhancement Roadmap](guides/ENHANCEMENT_ROADMAP.md) - Technical development roadmap
+- [Troubleshooting](guides/troubleshooting.md) - Solve common issues
+- [Contributing](guides/contributing.md) - Join our development community
+- [Comprehensive Documentation](guides/COMPREHENSIVE_DOCUMENTATION.md) - Complete technical docs
+- [Project Overview](guides/PROJECT_OVERVIEW.md) - Framework concepts and architecture
+- [Status Report](guides/STATUS_REPORT.md) - Current project status
+
+### 📈 **Marketing Documentation** (`/marketing/`)
+Marketing materials, templates, and outreach strategies.
+
+#### **Outreach** (`/marketing/outreach/`)
+- [Outreach Emails](outreach/OUTREACH_EMAILS.md) - Email templates and strategies
+
+#### **Templates** (`/marketing/templates/`)
+- [Consulting Proposal Template](templates/CONSULTING_PROPOSAL_TEMPLATE.md) - Template for consulting proposals
+- [Enterprise Features](templates/ENTERPRISE_FEATURES.md) - Enterprise feature descriptions
+- [Services](templates/SERVICES.md) - Service offerings and descriptions
+- [GitHub Sponsors](templates/SPONSORS.md) - Sponsorship tiers and benefits
+
+### 🎓 **Educational Documentation** (`/educational/`)
+Learning resources, courses, and getting started guides.
+
+#### **Courses** (`/educational/courses/`)
+- [Course Overview](courses/README.md) - Educational course structure
+- [Content Strategy](courses/Content_Strategy.md) - Course content strategy
+- [Platform Strategy](courses/Course_Platform_Strategy.md) - Platform delivery strategy
+- [LMS Implementation](courses/LMS_Technical_Implementation.md) - Technical LMS setup
+- [Course Plan](courses/brain_ai_course_plan.md) - Detailed course planning
+- [Content Outline](courses/course_content_outline.md) - Course structure outline
+- [Implementation Toolkit](courses/course_implementation_toolkit.md) - Course creation toolkit
+- [Launch Checklist](courses/course_launch_checklist.md) - Course launch preparation
+
+#### **Getting Started** (`/educational/getting-started/`)
+- [Getting Started Guide](getting-started/getting-started.md) - Quick start for new users
+
+### 🚀 **Core Documentation** (Legacy Structure)
+Legacy documentation for backward compatibility:
+
 - [Getting Started](getting-started.md) - Begin your journey with Brain AI
 - [Installation Guide](installation.md) - Install SDKs for your programming language
 - [API Reference](api-reference.md) - Complete API documentation
@@ -12,21 +79,29 @@ Welcome to the comprehensive documentation for the Brain AI Framework - a revolu
 - [Configuration](configuration.md) - Advanced configuration options
 - [Troubleshooting](troubleshooting.md) - Solve common issues
 
-### 🛠️ Development & Deployment
+### 🛠️ **Development & Deployment** (Legacy)
+Legacy development documentation:
+
 - [Contributing](contributing.md) - Join our development community
 - [Deployment Guide](deployment-guide.md) - Production deployment instructions
 - [Development Guide](development/) - Detailed development documentation
 
-### 📖 User Resources
+### 📖 **User Resources** (Legacy)
+Legacy user documentation:
+
 - [User Guide](user-guide/) - End-user documentation and tutorials
 - [Case Studies](case-studies.md) - Real-world implementation examples
 - [Overview](overview/) - High-level framework concepts and architecture
 
-### 💼 Business & Strategy
+### 💼 **Business & Strategy** (Legacy)
+Legacy business documentation:
+
 - [Strategy](strategy/) - Business strategy and monetization plans
 - [Courses](courses/) - Course creation and educational content
 
-### 🐙 GitHub & Repository
+### 🐙 **GitHub & Repository** (Legacy)
+Legacy GitHub documentation:
+
 - [GitHub Guide](github/) - Repository management and GitHub-specific resources
 - [Templates](templates/) - Reusable templates and examples
 
