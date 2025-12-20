@@ -98,7 +98,7 @@ class User(Base):
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     last_login = Column(DateTime(timezone=True))
     
-    # Relationships
+    # Relationships - Core LMS
     enrollments = relationship("CourseEnrollment", back_populates="user")
     created_courses = relationship("Course", back_populates="creator")
     progress_records = relationship("Progress", back_populates="user")
@@ -108,6 +108,33 @@ class User(Base):
     forum_posts = relationship("ForumPost", back_populates="author")
     forum_comments = relationship("ForumComment", back_populates="author")
     reviews = relationship("CourseReview", back_populates="user")
+    
+    # Relationships - Phase 3: Revenue & Community Features
+    # Pricing & Payments
+    pricing = relationship("CoursePricing", back_populates="course")
+    refunds = relationship("RefundRequest", back_populates="user")
+    corporate_packages = relationship("CorporatePackage")
+    certifications = relationship("UserCertification", back_populates="user")
+    
+    # Community Features
+    created_events = relationship("Event", back_populates="created_by_user")
+    event_registrations = relationship("EventRegistration", back_populates="user")
+    
+    # Study Groups
+    created_study_groups = relationship("StudyGroup", back_populates="created_by_user")
+    study_group_memberships = relationship("StudyGroupMember", back_populates="user")
+    created_study_sessions = relationship("StudySession", back_populates="created_by_user")
+    study_session_attendance = relationship("StudySessionAttendance", back_populates="user")
+    
+    # Office Hours
+    office_hours_as_expert = relationship("OfficeHour", back_populates="expert")
+    office_hour_registrations = relationship("OfficeHourRegistration", back_populates="user")
+    
+    # Alumni Network
+    alumni_profile = relationship("AlumniProfile", back_populates="user", uselist=False)
+    alumni_connections = relationship("AlumniConnection", back_populates="connected_user")
+    posted_job_opportunities = relationship("JobOpportunity", back_populates="posted_by_user")
+    job_applications = relationship("JobApplication", back_populates="applicant")
 
 class Course(Base):
     """Course model"""
@@ -167,6 +194,7 @@ class Course(Base):
     enrollments = relationship("CourseEnrollment", back_populates="course")
     reviews = relationship("CourseReview", back_populates="course")
     learning_paths = relationship("LearningPath", back_populates="course")
+    pricing = relationship("CoursePricing", back_populates="course")
 
 class Module(Base):
     """Course Module model"""
@@ -506,8 +534,8 @@ class ForumPost(Base):
     author_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     
     # Content
-    title = Column(String(255), content = Column(Text nullable=False)
-   , nullable=False)
+    title = Column(String(255), nullable=False)
+    content = Column(Text, nullable=False)
     tags = Column(ARRAY(String))
     
     # Threading
