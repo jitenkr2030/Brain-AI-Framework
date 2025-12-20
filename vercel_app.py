@@ -45,7 +45,7 @@ class InfoResponse(BaseModel):
 @app.get("/", response_class=FileResponse)
 async def serve_landing_page():
     """Serve the main landing page"""
-    return "index.html"
+    return FileResponse("index.html")
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
