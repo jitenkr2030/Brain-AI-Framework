@@ -174,6 +174,37 @@ Many AI projects struggle due to retraining costs and lack of memory. Brain AI s
 1. [Enterprise Features](./enterprise/)
 2. [Contact Enterprise Sales](./website/contact.html)
 
+## 💖 GitHub Sponsors – Support & Unlock Benefits
+
+**Support the Open-Source Project**
+
+GitHub Sponsors help fund ongoing open-source development and community support.
+
+### 🌱 Supporter — $5/month
+- ❤️ Name in README
+- 🚀 Early feature previews
+- 📧 Sponsor-only updates
+
+### ⚡ Builder — $15/month
+- ✅ All Supporter benefits
+- 🧠 Access to advanced examples
+- 📚 Premium tutorials
+- 🗳️ Vote on roadmap features
+
+### 🔥 Professional — $50/month
+- ✅ All Builder benefits
+- 📞 Monthly 1-on-1 (30 min)
+- 🔧 Architecture review
+- ⚡ Priority support
+
+### 💎 Enterprise Sponsor — $200/month
+- ✅ All benefits
+- 🎯 Custom implementation guidance
+- 🔐 Production hardening support
+- 🏆 Featured sponsor recognition
+
+👉 **[Sponsor here](https://github.com/sponsors/jitenkr2030)**: GitHub Sponsors Button
+
 ---
 
 **Ready to build AI with persistent memory?** [Start with examples](./open_source/examples/) or [explore the SaaS platform](./platform/README.md).
