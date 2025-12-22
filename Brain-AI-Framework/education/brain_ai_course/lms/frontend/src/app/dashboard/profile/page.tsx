@@ -35,10 +35,10 @@ export default function ProfilePage() {
   };
 
   const tabs = [
-    { id: 'profile', label: '个人资料', icon: '👤' },
-    { id: 'security', label: '安全设置', icon: '🔒' },
-    { id: 'notifications', label: '通知偏好', icon: '🔔' },
-    { id: 'preferences', label: '偏好设置', icon: '⚙️' },
+    { id: 'profile', label: 'Profile', icon: '👤' },
+    { id: 'security', label: 'Security', icon: '🔒' },
+    { id: 'notifications', label: 'Notifications', icon: '🔔' },
+    { id: 'preferences', label: 'Preferences', icon: '⚙️' },
   ];
 
   return (
@@ -52,10 +52,10 @@ export default function ProfilePage() {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                返回仪表盘
+                Back to Dashboard
               </a>
             </Button>
-            <h1 className="text-2xl font-bold text-gray-900">账户设置</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Account Settings</h1>
           </div>
         </div>
       </header>
@@ -91,13 +91,13 @@ export default function ProfilePage() {
               <>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between">
-                    <CardTitle>个人资料信息</CardTitle>
+                    <CardTitle>Profile Information</CardTitle>
                     <Button
                       variant={isEditing ? 'default' : 'outline'}
                       size="sm"
                       onClick={() => (isEditing ? handleSave() : setIsEditing(true))}
                     >
-                      {isEditing ? '保存更改' : '编辑资料'}
+                      {isEditing ? 'Save Changes' : 'Edit Profile'}
                     </Button>
                   </CardHeader>
                   <CardContent className="space-y-6">
@@ -109,10 +109,10 @@ export default function ProfilePage() {
                       </Avatar>
                       <div>
                         <Button variant="outline" size="sm" className="mb-2">
-                          上传新头像
+                          Upload New Avatar
                         </Button>
                         <p className="text-sm text-gray-500">
-                          支持 JPG、PNG 格式，最大 2MB
+                          Supports JPG, PNG formats, max 2MB
                         </p>
                       </div>
                     </div>
@@ -121,19 +121,19 @@ export default function ProfilePage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          用户名
+                          Username
                         </label>
                         <Input
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
                           disabled={!isEditing}
-                          placeholder="输入您的用户名"
+                          placeholder="Enter your username"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          邮箱地址
+                          Email Address
                         </label>
                         <Input
                           name="email"
@@ -141,36 +141,36 @@ export default function ProfilePage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           disabled={!isEditing}
-                          placeholder="输入您的邮箱"
+                          placeholder="Enter your email"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          手机号码
+                          Phone Number
                         </label>
                         <Input
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
                           disabled={!isEditing}
-                          placeholder="输入您的手机号码"
+                          placeholder="Enter your phone number"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          所在地区
+                          Location
                         </label>
                         <Input
                           name="location"
                           value={formData.location}
                           onChange={handleInputChange}
                           disabled={!isEditing}
-                          placeholder="输入您所在的地区"
+                          placeholder="Enter your location"
                         />
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          个人简介
+                          Bio
                         </label>
                         <textarea
                           name="bio"
@@ -179,7 +179,7 @@ export default function ProfilePage() {
                           disabled={!isEditing}
                           rows={4}
                           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
-                          placeholder="介绍一下自己..."
+                          placeholder="Tell us about yourself..."
                         />
                       </div>
                     </div>
@@ -188,12 +188,12 @@ export default function ProfilePage() {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>社交链接</CardTitle>
+                    <CardTitle>Social Links</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        个人网站
+                        Personal Website
                       </label>
                       <Input
                         name="website"
@@ -236,56 +236,56 @@ export default function ProfilePage() {
             {activeTab === 'security' && (
               <Card>
                 <CardHeader>
-                  <CardTitle>安全设置</CardTitle>
+                  <CardTitle>Security Settings</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="border-b border-gray-200 pb-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">修改密码</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Change Password</h3>
                     <div className="space-y-4 max-w-md">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          当前密码
+                          Current Password
                         </label>
-                        <Input type="password" placeholder="输入当前密码" />
+                        <Input type="password" placeholder="Enter current password" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          新密码
+                          New Password
                         </label>
-                        <Input type="password" placeholder="输入新密码" />
+                        <Input type="password" placeholder="Enter new password" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          确认新密码
+                          Confirm New Password
                         </label>
-                        <Input type="password" placeholder="再次输入新密码" />
+                        <Input type="password" placeholder="Confirm new password" />
                       </div>
-                      <Button>更新密码</Button>
+                      <Button>Update Password</Button>
                     </div>
                   </div>
 
                   <div className="border-b border-gray-200 pb-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">两步验证</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Two-Factor Authentication</h3>
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-gray-600">
-                          为您的账户添加额外的安全层
+                          Add an extra layer of security to your account
                         </p>
                         <p className="text-sm text-gray-500 mt-1">
-                          当前状态：<Badge variant="secondary">未启用</Badge>
+                          Current Status: <Badge variant="secondary">Not Enabled</Badge>
                         </p>
                       </div>
-                      <Button variant="outline">启用两步验证</Button>
+                      <Button variant="outline">Enable 2FA</Button>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">登录历史</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Login History</h3>
                     <div className="space-y-3">
                       {[
-                        { device: 'Windows - Chrome', location: '北京, 中国', time: '刚刚' },
-                        { device: 'iPhone - Safari', location: '上海, 中国', time: '2小时前' },
-                        { device: 'MacOS - Firefox', location: '杭州, 中国', time: '昨天' },
+                        { device: 'Windows - Chrome', location: 'Beijing, China', time: 'Just now' },
+                        { device: 'iPhone - Safari', location: 'Shanghai, China', time: '2 hours ago' },
+                        { device: 'MacOS - Firefox', location: 'Hangzhou, China', time: 'Yesterday' },
                       ].map((login, index) => (
                         <div
                           key={index}
@@ -308,33 +308,33 @@ export default function ProfilePage() {
             {activeTab === 'notifications' && (
               <Card>
                 <CardHeader>
-                  <CardTitle>通知偏好</CardTitle>
+                  <CardTitle>Notification Preferences</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {[
                     {
-                      title: '课程更新',
-                      description: '当您订阅的课程有新内容时收到通知',
+                      title: 'Course Updates',
+                      description: 'Receive notifications when courses you follow have new content',
                       enabled: true,
                     },
                     {
-                      title: '学习提醒',
-                      description: '每日学习提醒，帮助您保持学习进度',
+                      title: 'Learning Reminders',
+                      description: 'Daily learning reminders to help you stay on track',
                       enabled: true,
                     },
                     {
-                      title: '社区动态',
-                      description: '当社区有新回复或提及您时收到通知',
+                      title: 'Community Activity',
+                      description: 'Get notified when there are new replies or mentions in the community',
                       enabled: false,
                     },
                     {
-                      title: '营销邮件',
-                      description: '接收最新课程推荐和优惠信息',
+                      title: 'Marketing Emails',
+                      description: 'Receive the latest course recommendations and special offers',
                       enabled: false,
                     },
                     {
-                      title: '进度报告',
-                      description: '每周接收学习进度报告',
+                      title: 'Progress Reports',
+                      description: 'Receive weekly learning progress reports',
                       enabled: true,
                     },
                   ].map((notification, index) => (
@@ -356,7 +356,7 @@ export default function ProfilePage() {
                       </label>
                     </div>
                   ))}
-                  <Button className="w-full sm:w-auto">保存偏好设置</Button>
+                  <Button className="w-full sm:w-auto">Save Preferences</Button>
                 </CardContent>
               </Card>
             )}
@@ -365,34 +365,38 @@ export default function ProfilePage() {
             {activeTab === 'preferences' && (
               <Card>
                 <CardHeader>
-                  <CardTitle>偏好设置</CardTitle>
+                  <CardTitle>Preferences</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        语言
+                        Language
                       </label>
                       <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="zh">简体中文</option>
                         <option value="en">English</option>
-                        <option value="ja">日本語</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
                       </select>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        时区
+                        Timezone
                       </label>
                       <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="asia/shanghai">亚洲/上海 (UTC+8)</option>
-                        <option value="asia/tokyo">亚洲/东京 (UTC+9)</option>
-                        <option value="america/new_york">美国/纽约 (UTC-5)</option>
-                        <option value="europe/london">欧洲/伦敦 (UTC+0)</option>
+                        <option value="america/new_york">Eastern Time (UTC-5)</option>
+                        <option value="america/chicago">Central Time (UTC-6)</option>
+                        <option value="america/denver">Mountain Time (UTC-7)</option>
+                        <option value="america/los_angeles">Pacific Time (UTC-8)</option>
+                        <option value="europe/london">London (UTC+0)</option>
+                        <option value="europe/paris">Paris (UTC+1)</option>
+                        <option value="asia/tokyo">Tokyo (UTC+9)</option>
                       </select>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        日期格式
+                        Date Format
                       </label>
                       <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                         <option value="yyyy-mm-dd">YYYY-MM-DD</option>
@@ -402,10 +406,10 @@ export default function ProfilePage() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        视频质量
+                        Video Quality
                       </label>
                       <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="auto">自动</option>
+                        <option value="auto">Auto</option>
                         <option value="1080p">1080p</option>
                         <option value="720p">720p</option>
                         <option value="480p">480p</option>
@@ -414,12 +418,12 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="pt-6 border-t border-gray-200">
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">播放器设置</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Player Settings</h3>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="font-medium text-gray-900">自动播放下一课</p>
-                          <p className="text-sm text-gray-500">课程结束后自动播放下一课</p>
+                          <p className="font-medium text-gray-900">Auto-play Next Lesson</p>
+                          <p className="text-sm text-gray-500">Automatically play the next lesson when current one ends</p>
                         </div>
                         <label className="relative inline-flex items-center cursor-pointer">
                           <input type="checkbox" defaultChecked className="sr-only peer" />
@@ -428,8 +432,8 @@ export default function ProfilePage() {
                       </div>
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="font-medium text-gray-900">显示字幕</p>
-                          <p className="text-sm text-gray-500">自动显示视频字幕（如果有）</p>
+                          <p className="font-medium text-gray-900">Show Subtitles</p>
+                          <p className="text-sm text-gray-500">Automatically show video subtitles when available</p>
                         </div>
                         <label className="relative inline-flex items-center cursor-pointer">
                           <input type="checkbox" defaultChecked className="sr-only peer" />
@@ -440,7 +444,7 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="pt-6 border-t border-gray-200">
-                    <Button className="w-full sm:w-auto">保存设置</Button>
+                    <Button className="w-full sm:w-auto">Save Settings</Button>
                   </div>
                 </CardContent>
               </Card>
