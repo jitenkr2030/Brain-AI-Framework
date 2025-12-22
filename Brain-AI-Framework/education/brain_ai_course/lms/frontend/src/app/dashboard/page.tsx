@@ -8,6 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useAuth } from '@/hooks/use-auth';
 import { useCourses } from '@/hooks/use-courses';
+import { RecommendationRail, LearningPathGraph } from '@/components/ai-features';
 
 interface EnrolledCourse {
   id: string;
@@ -202,6 +203,34 @@ export default function DashboardPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* AI-Powered Features */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div className="lg:col-span-2">
+            {user && (
+              <RecommendationRail
+                userId={user.id}
+                limit={3}
+                title="AI Recommended for You"
+                showReasoning={true}
+                onCourseClick={(courseId) => {
+                  console.log('Navigate to course:', courseId);
+                }}
+              />
+            )}
+          </div>
+          <div>
+            {user && (
+              <LearningPathGraph
+                userId={user.id}
+                targetGoal="Master Brain-Inspired AI"
+                onModuleClick={(moduleId) => {
+                  console.log('Navigate to module:', moduleId);
+                }}
+              />
+            )}
+          </div>
         </div>
 
         {/* Quick Actions */}

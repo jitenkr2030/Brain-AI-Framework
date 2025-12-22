@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter, Poppins } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import { Toaster } from '@/components/ui/toaster'
+import { AiFeaturesContainer } from '@/components/ai-features'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -178,6 +179,7 @@ export default function RootLayout({
         <Providers>
           <div className="relative flex min-h-screen flex-col">
             <main className="flex-1">
+              <AiFeaturesContainer />
               {children}
             </main>
           </div>
